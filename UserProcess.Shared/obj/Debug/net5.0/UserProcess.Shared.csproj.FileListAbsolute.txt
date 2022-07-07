@@ -1,0 +1,15 @@
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\UserProcess.Shared.deps.json
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\UserProcess.Shared.dll
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\ref\UserProcess.Shared.dll
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\UserProcess.Shared.pdb
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.AssemblyInfoInputs.cache
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.AssemblyInfo.cs
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.csproj.CoreCompileInputs.cache
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.dll
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\ref\UserProcess.Shared.dll
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.pdb
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\UserProcess.Shared.runtimeconfig.json
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\bin\Debug\net5.0\UserProcess.Shared.runtimeconfig.dev.json
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.genruntimeconfig.cache
+C:\Users\yeziz\source\repos\UserProcess\UserProcess.Shared\obj\Debug\net5.0\UserProcess.Shared.csproj.AssemblyReference.cache

@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "14c610b4-a7f8-4775-83a1-be31dbf5fe65": {
+      "ProjectGuid": "14c610b4-a7f8-4775-83a1-be31dbf5fe65",
+      "DisplayName": "UserProcess.Web",
+      "ColorIndex": 0
+    },
+    "f0b2bb8c-42a5-433f-9446-133f81999b49": {
+      "ProjectGuid": "f0b2bb8c-42a5-433f-9446-133f81999b49",
+      "DisplayName": "UserProcess.Data",
+      "ColorIndex": 1
+    },
+    "29f41eda-f0d8-40ef-882f-93e1fd3bb43d": {
+      "ProjectGuid": "29f41eda-f0d8-40ef-882f-93e1fd3bb43d",
+      "DisplayName": "UserProcess.Entity",
+      "ColorIndex": 2
+    },
+    "6378b0a3-7237-45e3-b48b-9aad55363a79": {
+      "ProjectGuid": "6378b0a3-7237-45e3-b48b-9aad55363a79",
+      "DisplayName": "UserProcess.Shared",
+      "ColorIndex": 3
+    },
+    "fad8a798-835b-4b19-ad4e-553ab61a09bf": {
+      "ProjectGuid": "fad8a798-835b-4b19-ad4e-553ab61a09bf",
+      "DisplayName": "UserProcess.Services",
+      "ColorIndex": 4
+    }
+  },
+  "NextColorIndex": 5
+}
