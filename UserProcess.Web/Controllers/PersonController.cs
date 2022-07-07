@@ -24,40 +24,26 @@ namespace UserProcess.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> SavePerson(string json)
         {
-            if (!string.IsNullOrEmpty(json))
-            {
-                var person = JsonConvert.DeserializeObject<PersonAddDto>(json, new CustomJsonConvertor(typeof(PersonAddDto)));
-                var result = await _personService.Add(person, "Admin");
-                return Ok(result);
-            }
-            else
+            if (string.IsNullOrEmpty(json))
                 return BadRequest("Error has occured!");
+
+            var person = JsonConvert.DeserializeObject<PersonAddDto>(json, new CustomJsonConvertor(typeof(PersonAddDto)));
+            var result = await _personService.Add(person, "Admin");
+            return Ok(result);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllPerson(string filter)
         {
-            IList<PersonGetDto> people;
 
-            string json = string.Empty;
-           
-                var filteredParams = JsonConvert.DeserializeObject<PersonGetDto>(filter, new CustomJsonConvertor(typeof(PersonGetDto)));
-                if (filteredParams == null)
-                {
-                    people = await _personService.GetAll();
-                    json = JsonConvert.SerializeObject(people, Formatting.Indented, new CustomJsonConvertor(typeof(PersonGetDto)));
-                }
-                else
-                {
-                people=filteredParams.FirstName!=null? await _personService.GetAll().ToList()
-                }
+            var people = await _personService.GetAll(filter);
+            string json = JsonConvert.SerializeObject(people, Formatting.Indented, new CustomJsonConvertor(typeof(List<PersonGetDto>)));
 
+            if (json.Equals("[]"))
+                return BadRequest("Data was not found!");
 
+            return Ok(json);
 
-                return Ok(json);
-            
-            //else
-            //    return BadRequest("There is no person");
         }
     }
 }

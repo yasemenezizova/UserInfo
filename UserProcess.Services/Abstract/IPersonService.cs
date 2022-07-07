@@ -11,7 +11,7 @@ namespace UserProcess.Services.Abstract
     public interface IPersonService 
     {
         Task<PersonGetDto> Get(int personId);
-        Task<IList<PersonGetDto>> GetAll();
+        Task<List<PersonGetDto>> GetAll(string filter);
         Task<long> Add(PersonAddDto entity, string userName);
         Task<long> Delete(int personId, string modifiedByName);
     }

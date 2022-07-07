@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using UserProcess.Data.Abstract;
 using UserProcess.Entity.Concrete;
 using UserProcess.Entity.Dtos;
 using UserProcess.Services.Abstract;
+using UserProcess.Shared.Helpers;
 
 namespace UserProcess.Services.Concrete
 {
@@ -36,7 +38,8 @@ namespace UserProcess.Services.Concrete
             {
                 person.ModifiedDate = DateTime.Now;
                 person.ModifiedByName = userName;
-                person.IsActive = true;
+                person.Address.ModifiedDate = DateTime.Now;
+                person.Address.ModifiedByName = "Admin";
                 addedPerson =await _unitOfWork.Person.UpdateAsync(person);
             }
             await _unitOfWork.SaveAsync();
@@ -54,11 +57,24 @@ namespace UserProcess.Services.Concrete
             throw new NotImplementedException();
         }
 
-        public async Task<IList<PersonGetDto>> GetAll()
+        public async Task<List<PersonGetDto>> GetAll(string filter)
         {
-
             var personDatas=await _unitOfWork.Person.GetAllAsync(x=>x.IsActive==true, x=>x.Address);
-            var returnedPersondatas=_mapper.Map<IList<PersonGetDto>>(personDatas);
+            var returnedPersondatas=_mapper.Map<List<PersonGetDto>>(personDatas);
+
+          
+            if (!(string.IsNullOrWhiteSpace(filter)))
+            {
+                var filteredParams = JsonConvert.DeserializeObject<PersonGetDto>(filter, new CustomJsonConvertor(typeof(PersonGetDto)));
+                if (!(string.IsNullOrEmpty(filteredParams.FirstName)))
+                    returnedPersondatas = returnedPersondatas.Where(x => x.FirstName == filteredParams.FirstName).ToList();
+                if (!(string.IsNullOrEmpty(filteredParams.LastName)))
+                    returnedPersondatas = returnedPersondatas.Where(x => x.LastName == filteredParams.LastName).ToList();
+                if (!(string.IsNullOrEmpty(filteredParams.City)))
+                    returnedPersondatas = returnedPersondatas.Where(x => x.City == filteredParams.City).ToList();
+              
+            }
+           
             return returnedPersondatas;
         }
     }

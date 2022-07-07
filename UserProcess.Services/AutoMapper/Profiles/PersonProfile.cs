@@ -14,7 +14,7 @@ namespace UserProcess.Services.AutoMapper.Profiles
         public PersonProfile()
         {
             CreateMap<PersonAddDto, Person>()
-                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(x => DateTime.Now));
+                .ForMember(dest => dest.CreatedDate, opt => opt.MapFrom(x => DateTime.Now)).ReverseMap();
             CreateMap<PersonGetDto, Person>()
                 .ForMember(dest => dest.ModifiedDate, opt => opt.MapFrom(x => DateTime.Now)).ReverseMap().ForMember(dest=>dest.City, opt=>opt.MapFrom(x=>x.Address.City));
         }

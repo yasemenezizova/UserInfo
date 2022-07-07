@@ -16,7 +16,7 @@ namespace UserProcess.Data.Concrete.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                @"Server=.;Database=PersonInfo4;Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
+                @"Server=.;Database=PersonInfo;Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
